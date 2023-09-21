@@ -4,7 +4,7 @@ const pool = require('../modules/pool');
 
 // GET request
 router.get('/', (req, res) => {
-    const queryText = `SELECT * FROM "list";`;
+    const queryText = `SELECT * FROM "list" ORDER BY name ASC;`;
     pool
     .query(queryText)
     .then((result) => {
@@ -21,7 +21,12 @@ router.post('/', (req, res) => {
     const newItem = req.body;
     const queryText = `INSERT INTO "list" ("name", "quantity", "unit", "purchased")
     VALUES ($1, $2, $3, $4);`;
-
+  // requires all fields to be filled in
+  if (!newItem.name || !newItem.quantity){
+    alert("Please fill in all of the fields and try again!")
+    res.sendStatus(400);
+    return;
+  };
     pool
     .query(queryText, [newItem.name, newItem.quantity, newItem.unit, newItem.purchased ])
     .then((result) => {

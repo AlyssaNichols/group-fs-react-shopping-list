@@ -9,6 +9,7 @@ return(<>
       <form onSubmit={addItem}>
         <label>Item</label>
         <input
+        required
           type="text"
           placeholder="Item name"
           value={itemName}
@@ -16,6 +17,7 @@ return(<>
         />
         <label>Quantity</label>
         <input
+        required
           type="number"
           placeholder="Quantity"
           value={itemQuantity}
