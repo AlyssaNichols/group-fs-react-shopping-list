@@ -6,7 +6,7 @@ CREATE TABLE list (
 	"purchased" boolean default false
 );
 
-SELECT * FROM list;
+SELECT * FROM list ORDER BY "purchased" ASC;
 
 INSERT INTO list ("name", "quantity")
 VALUES ('Milk', 1),
