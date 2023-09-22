@@ -87,6 +87,7 @@ function App() {
             <Header />
             <main>
                 <InputForm resetList={resetList} handleClear={handleClear} addItem={addItem} itemUnit={itemUnit} setItemUnit={setItemUnit} itemName={itemName} setItemName={setItemName} itemQuantity={itemQuantity} setItemQuantity= {setItemQuantity}/>
+                <br />
                 <hr/>
                 <ShoppingList itemList={itemList} handleDelete={handleDelete} updateItem={updateItem}/>
                                 
