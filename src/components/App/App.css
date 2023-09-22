@@ -14,6 +14,14 @@ main {
   background-color: springgreen;
 }
 
+.editButton{
+  background-color: rgb(183, 207, 215);
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 3px 8px;
+  margin-bottom: 3px
+}
+
 .deleteBtn {
   border: 1px solid black;
   border-radius: 3px;

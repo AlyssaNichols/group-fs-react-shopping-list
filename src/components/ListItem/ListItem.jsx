@@ -1,9 +1,14 @@
-export default function ListItem({ item, updateItem, handleDelete}) {
+export default function ListItem({ item, updateItem, handleDelete, editMode, setEditMode}) {
+
+  const handleEdit = () => {
+    console.log(item.id)
+        };
 
   return ( 
     <div className="card">
       <p>{item.name}</p>
       <p>{item.quantity} {item.unit}</p>
+      <button className="editButton" onClick={() => handleEdit(item.id)}>Edit</button>
       <br />
       <div>
       {item.purchased ? (
@@ -16,4 +21,6 @@ export default function ListItem({ item, updateItem, handleDelete}) {
     </div>
     </div>
   );
+  
 }
+

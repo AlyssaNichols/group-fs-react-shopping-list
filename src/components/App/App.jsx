@@ -12,6 +12,7 @@ function App() {
     const [itemName, setItemName] = useState('');
     const [itemQuantity, setItemQuantity] = useState("");
     const [itemUnit, setItemUnit] = useState('');
+    const [editMode, setEditMode] = useState(false)
 
     useEffect(() => {
       fetchItem();
@@ -89,7 +90,7 @@ function App() {
                 <InputForm resetList={resetList} handleClear={handleClear} addItem={addItem} itemUnit={itemUnit} setItemUnit={setItemUnit} itemName={itemName} setItemName={setItemName} itemQuantity={itemQuantity} setItemQuantity= {setItemQuantity}/>
                 <br />
                 <hr/>
-                <ShoppingList itemList={itemList} handleDelete={handleDelete} updateItem={updateItem}/>
+                <ShoppingList editMode={editMode} setEditMode={setEditMode} itemList={itemList} handleDelete={handleDelete} updateItem={updateItem}/>
                                 
             </main>
         </div>
